@@ -57,3 +57,18 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Rspec::Translation project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/rspec-translation/blob/master/CODE_OF_CONDUCT.md).
+
+## Versioning
+
+This library aims to adhere to [Semantic Versioning 2.0.0](http://semver.org/). Violations of this scheme should be reported as
+bugs. Specifically, if a minor or patch version is released that breaks backward compatibility, that
+version should be immediately yanked and/or a new version should be immediately released that restores
+compatibility. Breaking changes to the public API will only be introduced with new major versions. As a
+result of this policy, once this gem reaches a 1.0 release, you can (and should) specify a dependency on
+this gem using the [Pessimistic Version Constraint](http://docs.rubygems.org/read/chapter/16#page74) with
+two digits of precision. For example:
+
+```ruby
+spec.add_dependency 'rspec-translation', '~> 1.0'
+```
+
