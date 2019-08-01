@@ -3,6 +3,18 @@
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
 version: 2
+
+workflows:
+  version: 2
+  test-deploy:
+    jobs:
+      - build
+      - deploy:
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/
 jobs:
   build:
     docker:
@@ -39,3 +51,20 @@ jobs:
             ./cc-test-reporter before-build
             bundle exec rspec
             ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
+  deploy:
+      docker:
+        - image: circleci/ruby:2.5.5
+
+      working_directory: ~/repo
+
+      steps:
+        - checkout
+        - run:
+            name: Setup Rubygem Credentials
+            command: bash .circleci/setup-rubygems.sh
+
+        - run:
+            name: Publish to Rubygems
+            command: |
+              gem build rspec-translation.gemspec
+              gem push "rspec-translation-$(git describe --tags).gem"
