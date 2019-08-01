@@ -26,6 +26,11 @@ Or install it yourself as:
 
 ```ruby
 describe Commerce::CardErrorMsg, type: :model do
+  let(:view_context) { StubViewContext.new }
+  let(:error_message) { 'a card error' }
+  let(:code) { 'a card decline code' }
+  let(:error) { { message: error_message, code: code } }
+
   subject(:sut) { described_class.new(view_context, error) }
 
   describe 'message' do
