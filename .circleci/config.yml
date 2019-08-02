@@ -54,6 +54,21 @@ jobs:
           paths:
             - vendor/bundle
 
+      - restore_cache:
+          keys:
+            - v1-rubocop-cache-{{ checksum ".rubocop.yml" }}-{{ .Branch }}
+            - v1-rubocop-cache-{{ checksum ".rubocop.yml" }}-master
+            - v1-rubocop-cache-{{ checksum ".rubocop.yml" }}
+
+      - run:
+          name: Rubocop
+          command: bundle exec rubocop --parallel
+
+      - save_cache:
+          key: v1-rubocop-cache-{{ checksum ".rubocop.yml" }}-{{ .Branch }}-{{ epoch }}
+          paths:
+            - ../.cache/rubocop_cache
+
       - run:
           name: Install Code Climate Test Reporter
           command: |
