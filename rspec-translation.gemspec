@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors = ['Gerry Power']
   spec.email = ['gerry@thepowerhouse.com']
 
-  spec.summary = 'A rack based web hook processing framework.'
+  spec.summary = 'Rspec plugin to test i18n model translations'
   spec.homepage = 'https://github.com/gerrypower/rspec-translation'
   spec.license = 'MIT'
 
@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rspec', '~> 3.0'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
+  spec.add_development_dependency 'bundler-audit', '0.6.1'
   spec.add_development_dependency 'guard', '~> 2.0'
   spec.add_development_dependency 'guard-rspec', '~> 4.0'
   spec.add_development_dependency 'guard-rubocop', '~> 1.0'
