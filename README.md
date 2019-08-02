@@ -1,6 +1,6 @@
 # Rspec::Translation
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/6349f2944ae10b03e9fa/maintainability)](https://codeclimate.com/github/gerrypower/rspec-translation/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/6349f2944ae10b03e9fa/test_coverage)](https://codeclimate.com/github/gerrypower/rspec-translation/test_coverage) [![CircleCI](https://circleci.com/gh/gerrypower/rspec-translation.svg?style=svg)](https://circleci.com/gh/gerrypower/rspec-translation) 
+[![Gem Version](https://badge.fury.io/rb/rspec-translation.svg)](https://badge.fury.io/rb/rspec-translation) [![Maintainability](https://api.codeclimate.com/v1/badges/6349f2944ae10b03e9fa/maintainability)](https://codeclimate.com/github/gerrypower/rspec-translation/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/6349f2944ae10b03e9fa/test_coverage)](https://codeclimate.com/github/gerrypower/rspec-translation/test_coverage) [![CircleCI](https://circleci.com/gh/gerrypower/rspec-translation.svg?style=svg)](https://circleci.com/gh/gerrypower/rspec-translation) 
 
 
 
