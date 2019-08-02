@@ -6,12 +6,14 @@
 
 Rspec::Translation is a [rspec](https://github.com/rspec/rspec) plugin that allows TDD of your translation process on ruby objects. It requires the [i18n](https://github.com/ruby-i18n/i18n) gem.
 
+Test change
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rspec-translation'
+gem 'rspec-translation', '~> 1.0'
 ```
 
 And then execute:
@@ -53,7 +55,7 @@ end
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/gerrypower/rspec-translation. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/gerrypower/rspec-translation. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -61,7 +63,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Rspec::Translation project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/rspec-translation/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Rspec::Translation project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/gerrypower/rspec-translation/blob/master/CODE_OF_CONDUCT.md).
 
 ## Versioning
 
@@ -70,7 +72,7 @@ bugs. Specifically, if a minor or patch version is released that breaks backward
 version should be immediately yanked and/or a new version should be immediately released that restores
 compatibility. Breaking changes to the public API will only be introduced with new major versions. As a
 result of this policy, once this gem reaches a 1.0 release, you can (and should) specify a dependency on
-this gem using the [Pessimistic Version Constraint](http://docs.rubygems.org/read/chapter/16#page74) with
+this gem using the [Pessimistic Version Constraint](https://guides.rubygems.org/patterns/#pessimistic-version-constraint) with
 two digits of precision. For example:
 
 ```ruby
