@@ -2,6 +2,8 @@
 #
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
+# Optimizations based on: http://engineering.later.com/2018/08/22/faster-circle-ci-jobs.html
+#
 version: 2
 
 workflows:
@@ -25,22 +27,32 @@ jobs:
     steps:
       - checkout
 
+      - restore_cache:
+          keys:
+            - v1-dependencies-gem-{{ checksum "rspec-translation.gemspec" }}
+            - v1-dependencies-gem-
+
       - run:
-          name: Configure Bundler
+          name: Install Bundler
           command: |
             export BUNDLER_VERSION=2.0.2 >> $BASH_ENV
             source $BASH_ENV
             gem install bundler
 
       - run:
-          name: install dependencies
+          name: Install dependencies
           command: |
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
+            bundle check --path vendor/bundle || bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       - run:
           name: Dependencies security audit
           command: |
             bundle exec bundle-audit check --update
+
+      - save_cache:
+          key: v1-dependencies-gem-{{ checksum "rspec-translation.gemspec" }}
+          paths:
+            - vendor/bundle
 
       - run:
           name: Install Code Climate Test Reporter
