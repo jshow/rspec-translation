@@ -18,7 +18,13 @@ end
 
 RSpec::Matchers.define :translate_with do |*args|
   match do |actual|
-    actual == I18n.translate(*args)
+    first, *rest = args
+
+    if rest.present?
+      actual == I18n.translate(first, **(rest.first))
+    else
+      actual == I18n.translate(first)
+    end
   end
   failure_message do
     "expected translation: '#{actual}' but got '#{I18n.t(*args)}'\n"
